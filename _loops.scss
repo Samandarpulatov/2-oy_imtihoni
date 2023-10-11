@@ -1,0 +1,65 @@
+/* padding va marginlarni tomonlari */
+$tomonlar: (
+    t: top,
+    r: right,
+    b: bottom,
+    l: left,
+    x: inline,
+    y: block,
+    );
+    
+    @each $key, $tomon in $tomonlar {
+        @for $i from 0 through 5 {
+            .m#{$key}-#{$i} {
+                margin-#{$tomon}: $i * 1em;
+            }
+            .p#{$key}-#{$i} {
+                padding-#{$tomon}: $i * 1em;
+            }
+        }
+    }
+/* padding va marginlarni tomonlari */
+
+
+/* padding va marginlarni umumiy qiymati */
+@for $i from 0 through 20 {
+    .p#{$i} {
+        padding: $i * 10px;
+    }
+}
+@for $i from 0 through 20 {
+    .m#{$i} {
+        margin: $i * 10px;
+    }
+}
+/* padding va marginlarni umumiy qiymati */
+
+
+
+$colors:(
+    primary: red,
+    secondary: green,
+    main-background: blue,
+    light: #eee,
+    dark: #111,
+);
+@each $key, $color in $colors {
+    .text-#{$key} {
+        color: $color;
+    }
+
+    .bg-#{$key} {
+        background-color: $color;
+    }
+
+    .b-shadow-#{$key} {
+        box-shadow: 0 0 20px $color;
+    }
+    .t-shadow-#{$key} {
+        text-shadow: 0 0 20px $color;
+    }
+
+    .border-#{$key} {
+        border: 2px solid $color;
+    }
+}
